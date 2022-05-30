@@ -1,4 +1,6 @@
 <div (click)="onCloseClick()" class="ui dimmer visible active">
+  <!-- If $event.stopPropagataion() is added, modal doesn't work properly either. Only clicking
+  outside of modal closes the modal, not with button or icon-->
   <div (click)="$event.stopPropagation()" class="ui modal visible active">
     <i (click)="onCloseClick()" class="close icon"></i>
     <div class="header">Modal!</div>
