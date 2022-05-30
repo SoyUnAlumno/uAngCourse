@@ -1,0 +1,15 @@
+.actions:empty {
+    /*looks for any div that has class of actions and has nothing in it, no chilren*/
+    display: none;
+}
+
+.actions-default {
+    display: none;
+}
+/*If we find element with class empty and sibling element
+ with class default, then apply...*/
+ /*We're hiding the default button if
+ there's one button provided by the user*/
+.actions:empty + .actions-default {
+display: block;
+}

@@ -8,6 +8,20 @@ import { Component, OnInit } from '@angular/core';
 
 export class ModsHomeComponent implements OnInit {
 modalOpen = false;
+items = [
+  {
+    title:'Some title',
+    content: 'some content'
+  },
+  {
+    title:'Second entry',
+    content: 'more text'
+  },
+  {
+    title:'Info',
+    content: 'contact us at: @info'
+  },
+]
   constructor() { }
   onClick() {
     this.modalOpen = !this.modalOpen;

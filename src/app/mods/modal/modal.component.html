@@ -1,14 +1,19 @@
 <div (click)="onCloseClick()" class="ui dimmer visible active">
-  <!-- If $event.stopPropagataion() is added, modal doesn't work properly either. Only clicking
-  outside of modal closes the modal, not with button or icon-->
-  <div (click)="$event.stopPropagation()" class="ui modal visible active">
-    <i (click)="onCloseClick()" class="close icon"></i>
-    <div class="header">Modal!</div>
-    <div class="content">
-      <p>Some content for the modal window should go here.</p>
+    <div (click)="$event.stopPropagation()" class="ui modal visible active">
+        <i (click)="onCloseClick()" class="close icon"></i>
+        <div class="header">
+            <ng-content select="[modalTitle]"></ng-content>
+        </div>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+        <div class="actions actions-default">
+            <button (click)="onCloseClick()" class="ui button">OK</button>
+        </div>
+        <div class="actions">
+            <ng-content select="[modalFooter]"></ng-content>
+        </div>
     </div>
-    <div class="actions">
-      <button (click)="onCloseClick()" class="ui button">OK</button>
-    </div>
-  </div>
 </div>
+
+ 9 lines (18 sloc)  737 Bytes
